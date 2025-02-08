@@ -35,50 +35,127 @@
         <div class="songItem">
           <img alt="" />
           <span class="songName">Let me love you</span>
-          <span class="songlistplay"><span class="timestamp">05:34
-              <i id="2" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
+          <span class="songlistplay">
+            <span class="timestamp">
+              <span id="currentTime">00:00</span> /
+              <span id="totalTime">00:00</span>
+              <i id="2" class="fa-regular fa-circle-play"></i>
+            </span>
+          </span>
         </div>
         <div class="songItem">
           <img alt="" />
           <span class="songName">Let me love you</span>
-          <span class="songlistplay"><span class="timestamp">05:34
-              <i id="3" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
+          <span class="songlistplay">
+            <span class="timestamp">
+              <span id="currentTime">00:00</span> /
+              <span id="totalTime">00:00</span>
+              <i id="3" class="fa-regular fa-circle-play"></i>
+            </span>
+          </span>
         </div>
         <div class="songItem">
           <img alt="" />
           <span class="songName">Let me love you</span>
-          <span class="songlistplay"><span class="timestamp">05:34
-              <i id="4" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
+          <span class="songlistplay">
+            <span class="timestamp">
+              <span id="currentTime">00:00</span> /
+              <span id="totalTime">00:00</span>
+              <i id="4" class="fa-regular fa-circle-play"></i>
+            </span>
+          </span>
         </div>
         <div class="songItem">
           <img alt="" />
           <span class="songName">Let me love you</span>
-          <span class="songlistplay"><span class="timestamp">05:34
-              <i id="5" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
+          <span class="songlistplay">
+            <span class="timestamp">
+              <span id="currentTime">00:00</span> /
+              <span id="totalTime">00:00</span>
+              <i id="5" class="fa-regular fa-circle-play"></i>
+            </span>
+          </span>
         </div>
         <div class="songItem">
           <img alt="" />
           <span class="songName">Let me love you</span>
-          <span class="songlistplay"><span class="timestamp">05:34
-              <i id="6" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
+          <span class="songlistplay">
+            <span class="timestamp">
+              <span id="currentTime">00:00</span> /
+              <span id="totalTime">00:00</span>
+              <i id="6" class="fa-regular fa-circle-play"></i>
+            </span>
+          </span>
         </div>
         <div class="songItem">
           <img alt="" />
           <span class="songName">Let me love you</span>
-          <span class="songlistplay"><span class="timestamp">05:34
-              <i id="7" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
+          <span class="songlistplay">
+            <span class="timestamp">
+              <span id="currentTime">00:00</span> /
+              <span id="totalTime">00:00</span>
+              <i id="7" class="fa-regular fa-circle-play"></i>
+            </span>
+          </span>
         </div>
         <div class="songItem">
           <img alt="" />
           <span class="songName">Let me love you</span>
-          <span class="songlistplay"><span class="timestamp">05:34
-              <i id="8" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
+          <span class="songlistplay">
+            <span class="timestamp">
+              <span id="currentTime">00:00</span> /
+              <span id="totalTime">00:00</span>
+              <i id="8" class="fa-regular fa-circle-play"></i>
+            </span>
+          </span>
         </div>
       </div>
     </div>
     <div class="songBanner"></div>
   </div>
+  <!-- ✅ Added Player Container ✅ -->
+  <div class="player-container">
+    <h2>Spotify Clone 🎵</h2>
+    <p id="masterSongName">Select a Song</p>
+    <audio id="audioPlayer"></audio>
 
+    <!-- Progress Bar -->
+    <input type="range" id="myProgressBar" min="0" value="0">
+
+    <!-- Play/Pause, Next, Previous -->
+    <div class="controls">
+      <i id="previous" class="fa fa-backward"></i>
+      <i id="masterplay" class="fa fa-circle-play"></i>
+      <i id="next" class="fa fa-forward"></i>
+    </div>
+
+    <!-- Time Display -->
+    <p><span id="currentTime">00:00</span> / <span id="totalTime">00:00</span></p>
+
+    <!-- Song List -->
+    <ul class="songlist">
+      <li class="songItem">
+        <img src="covers/cover1.jpg">
+        <span class="songName">Diya Aur Baati Hum</span>
+        <i id="0" class="fa fa-circle-play songItemPlay"></i>
+      </li>
+      <li class="songItem">
+        <img src="covers/cover2.jpg">
+        <span class="songName">Har Funn Maula</span>
+        <i id="1" class="fa fa-circle-play songItemPlay"></i>
+      </li>
+      <li class="songItem">
+        <img src="covers/cover3.jpg">
+        <span class="songName">Guilty - Karan Aujla</span>
+        <i id="2" class="fa fa-circle-play songItemPlay"></i>
+      </li>
+      <li class="songItem">
+        <img src="covers/cover4.jpg">
+        <span class="songName">Tu Hi Meri Shab Hai</span>
+        <i id="3" class="fa fa-circle-play songItemPlay"></i>
+      </li>
+    </ul>
+  </div>
   <div class="bottom">
     <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100" />
     <div class="icons">
@@ -92,7 +169,6 @@
       <span id="masterSongName">diya_aur_baati_hum....(128k)</span>
     </div>
   </div>
-  <a rel="stylesheet" href="text.html">Text</a>
   <script src="https://kit.fontawesome.com/ac325822a8.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="script.js"></script>
 </body>
