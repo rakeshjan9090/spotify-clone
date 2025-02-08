@@ -1,6 +1,6 @@
 console.log('Welcome to Spotify');
 //Initialize the variables
-let songIndex = 1;
+let songIndex = 0;
 let audioElement = new Audio('song/1.mp3');
 let masterPlay = document.getElementById('masterplay');
 let myProgressBar = document.getElementById('myProgressBar');
@@ -21,7 +21,6 @@ let songs = [
 	{songName: "Mummy Kassam - Coolie No 1", filePath: "song/6.mp3", coverPath: "covers/cover6.jpg"},
 	{songName: "Jai Veeru - Khasa Aala Chahar", filePath: "song/7.mp3", coverPath: "covers/cover7.jpg"},
 	{songName: "Saiyyonee - Yasser Desai", filePath: "song/8.mp3", coverPath: "covers/cover8.jpg"},
-	{songName: "Saiyyonee - Yasser Desai", filePath: "song/9.mp3", coverPath: "covers/cover9.jpg"},
 ]
 // Populate song list UI
 songItems.forEach((element, i)=>{
@@ -43,10 +42,11 @@ audioElement.addEventListener("loadedmetadata", () => {
 
 // Update Current Time in UI
 audioElement.addEventListener("timeupdate", () => {
-	currentTimeDisplay.textContent = formatTime(audioElement.currentTime);
+	currentTimeDisplay.textContent = totalTime(audioElement.currentTime);
 	// Update Seekbar
-	let progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
+	let progress = parseInt((audioElement.currentTime/audioElement.duration) * 100);
 	myProgressBar.value = progress;
+	
 });
 
 // Seekbar Change
@@ -117,7 +117,7 @@ document.getElementById('next').addEventListener('click', ()=>{
 	// } else {
 	// 	songIndex += 1;
 	// }
-	songIndex = (songIndex + 1) % songs.length;
+	songIndex = (songIndex + 1 + songs.length) % songs.length;
 	audioElement.src = songs[songIndex].filePath;
 	masterSongName.innerText = songs[songIndex].songName;
 	audioElement.currentTime = 0;
