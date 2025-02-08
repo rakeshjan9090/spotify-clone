@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <script
+      src="https://kit.fontawesome.com/your-fontawesome-kit.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .songlistplay {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="audioPlayer" src="song\1.mp3"></audio>
+
+    <span class="songlistplay">
+      <span class="timestamp">
+        <span id="currentTime">00:00</span> /
+        <span id="totalTime">00:00</span>
+        <i id="playPauseBtn" class="fa-regular fa-circle-play"></i>
+      </span>
+    </span>
+
+    <script>
+      const audio = document.getElementById("audioPlayer");
+      const playPauseBtn = document.getElementById("playPauseBtn");
+      const currentTimeDisplay = document.getElementById("currentTime");
+      const totalTimeDisplay = document.getElementById("totalTime");
+
+      // Function to format time (MM:SS)
+      function formatTime(seconds) {
+        let min = Math.floor(seconds / 60);
+        let sec = Math.floor(seconds % 60);
+        return `${min}:${sec < 10 ? "0" + sec : sec}`;
+      }
+
+      // Update total duration when metadata is loaded
+      audio.addEventListener("loadedmetadata", () => {
+        totalTimeDisplay.textContent = formatTime(audio.duration);
+      });
+
+      // Update current time while playing
+      audio.addEventListener("timeupdate", () => {
+        currentTimeDisplay.textContent = formatTime(audio.currentTime);
+      });
+
+      // Play/Pause button functionality
+      playPauseBtn.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          playPauseBtn.classList.replace("fa-circle-play", "fa-circle-pause");
+        } else {
+          audio.pause();
+          playPauseBtn.classList.replace("fa-circle-pause", "fa-circle-play");
+        }
+      });
+    </script>
+  </body>
+</html>

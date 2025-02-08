@@ -119,7 +119,7 @@ nav ul li{
 
 @media only screen and (max-width: 600px) {
   body {
-    background-color: darkred;
+    background-color: rgb(104, 206, 231);
   }
 }
 
