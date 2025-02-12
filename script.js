@@ -73,15 +73,15 @@ masterPlay.addEventListener('click', ()=>{
 });
 
 //Listen to Event
-	audioElement.addEventListener('timeupdate', ()=>{
+	//audioElement.addEventListener('timeupdate', ()=>{
 		//update seekbar
-		progress = parseInt((audioElement.currentTime/audioElement.duration)* 100);
-		myProgressBar.value = progress;
-	}); 
+		//progress = parseInt((audioElement.currentTime/audioElement.duration)* 100);
+		//myProgressBar.value = progress;
+	//}); 
 
-	myProgressBar.addEventListener('change',()=>{
-		audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
-	})
+	//myProgressBar.addEventListener('change',()=>{
+		//audioElement.currentTime = myProgressBar.value *audioElement.duration/100;
+	//})
 
 // Reset All Play Buttons
 const makeAllPlays = ()=>{
