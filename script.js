@@ -100,7 +100,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
 		// e.target.classList.remove('fa-circle-play');
 		// e.target.classList.add('fa-circle-pause');
 		e.target.classList.replace('fa-circle-play', 'fa-circle-pause');
-		audioElement.src = `song/${songIndex}.mp3`;
+		audioElement.src = songs[songIndex].filePath;
 		masterSongName.innerText = songs[songIndex].songName;
 		audioElement.currentTime = 0;
 		audioElement.play();
