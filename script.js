@@ -73,15 +73,15 @@ masterPlay.addEventListener('click', ()=>{
 });
 
 //Listen to Event
-	audioElement.addEventListener('timeupdate', ()=>{
+	//audioElement.addEventListener('timeupdate', ()=>{
 		//update seekbar
-		progress = parseInt((audioElement.currentTime/audioElement.duration)* 100);
-		myProgressBar.value = progress;
-	}); 
+		//progress = parseInt((audioElement.currentTime/audioElement.duration)* 100);
+		//myProgressBar.value = progress;
+	//}); 
 
-	myProgressBar.addEventListener('change',()=>{
-		audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
-	})
+	//myProgressBar.addEventListener('change',()=>{
+		//audioElement.currentTime = myProgressBar.value *audioElement.duration/100;
+	//})
 
 // Reset All Play Buttons
 const makeAllPlays = ()=>{
@@ -100,7 +100,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
 		// e.target.classList.remove('fa-circle-play');
 		// e.target.classList.add('fa-circle-pause');
 		e.target.classList.replace('fa-circle-play', 'fa-circle-pause');
-		audioElement.src = `song/${songIndex}.mp3`;
+		audioElement.src = songs[songIndex].filePath;
 		masterSongName.innerText = songs[songIndex].songName;
 		audioElement.currentTime = 0;
 		audioElement.play();
@@ -118,7 +118,7 @@ document.getElementById('next').addEventListener('click', ()=>{
 	// songIndex += 1;
 	// }
 	songIndex = (songIndex + 1) % songs.length;
-	audioElement.src = `song/${songIndex}.mp3`;
+	audioElement.src = songs[songIndex].filePath;
 	masterSongName.innerText = songs[songIndex].songName;
 	audioElement.currentTime = 0;
 	audioElement.play();
@@ -134,7 +134,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
 	// songIndex -= 1;
 	// }
 	songIndex = (songIndex - 1 + songs.length) % songs.length;
-	audioElement.src = `song/${songIndex}.mp3`;
+	audioElement.src = songs[songIndex].filePath;
 	masterSongName.innerText = songs[songIndex].songName;
 	audioElement.currentTime = 0;
 	audioElement.play();
