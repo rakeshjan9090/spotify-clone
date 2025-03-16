@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Sidebar (Song List) -->
+      <div class="songList">
+        <h1>Best of MCS - No Copyright Sounds</h1>
+        <div class="songItemContainer">
+          <div class="songItem">
+            <img src="covers/cover1.jpg" alt="" />
+            <span class="songName">Diya Aur Baati Hum</span>
+            <span class="songlistplay">
+              <span class="timestamp">
+                05:34
+                <i id="0" class="fa-regular songItemPlay fa-circle-play"></i>
+              </span>
+            </span>
+          </div>
+          <div class="songItem">
+            <img src="covers/cover2.jpg" alt="" />
+            <span class="songName">Har Funn Maula</span>
+            <span class="songlistplay">
+              <span class="timestamp">
+                05:12
+                <i id="1" class="fa-regular songItemPlay fa-circle-play"></i>
+              </span>
+            </span>
+          </div>
+          <div class="songItem">
+            <img src="covers/cover3.jpg" alt="" />
+            <span class="songName">Guilty - Karan Aujla</span>
+            <span class="songlistplay">
+              <span class="timestamp">
+                04:50
+                <i id="2" class="fa-regular songItemPlay fa-circle-play"></i>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Music Player Controls -->
+      <div class="songBanner">
+        <div class="controls">
+          <img id="gif" src="playing.gif" alt="Playing" style="opacity: 0" />
+          <span id="masterSongName">Select a Song</span>
+
+          <div class="playerControls">
+            <i id="previous" class="fa-solid fa-backward"></i>
+            <i id="masterplay" class="fa-regular fa-circle-play"></i>
+            <i id="next" class="fa-solid fa-forward"></i>
+          </div>
+
+          <!-- Seekbar and Time -->
+          <div class="progressContainer">
+            <span id="currentTime">00:00</span>
+            <input
+              type="range"
+              id="myProgressBar"
+              min="0"
+              max="100"
+              value="0"
+            />
+            <span id="totalDuration">00:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script1.js"></script>
+  </body>
+</html>

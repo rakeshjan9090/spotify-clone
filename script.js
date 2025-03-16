@@ -17,6 +17,7 @@ let songs = [
 	{songName: "Mummy Kassam - Coolie No 1", filePath: "song/6.mp3", coverPath: "covers/cover6.jpg"},
 	{songName: "Jai Veeru - Khasa Aala Chahar", filePath: "song/7.mp3", coverPath: "covers/cover7.jpg"},
 	{songName: "Saiyyonee - Yasser Desai", filePath: "song/8.mp3", coverPath: "covers/cover8.jpg"},
+	{songName: "Krrish 3 - Raghupati Raghav", filePath: "song/08.mp3", coverPath: "covers/cover8.jpg"},
 ]
 
 songItems.forEach((element, i)=>{
@@ -75,7 +76,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
 })
 
 document.getElementById('next').addEventListener('click', ()=>{
-	if (songIndex>=8) {
+	if (songIndex>=10) {
 		songIndex = 0;
 	} else {
 		songIndex += 1;
